@@ -54,8 +54,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    Size screenSize = MediaQuery.of(context).size;
-    Orientation orientation = MediaQuery.of(context).orientation;
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
@@ -74,8 +72,10 @@ class _MyHomePageState extends State<MyHomePage> {
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Container(
-          width: 500,
-          height: 700,
+          //height: MediaQuery.of(context).size.height,
+          //width: MediaQuery.of(context).size.width,
+          height: 600.0, //10% of screen height
+          width: 450.0,
           color: Color.fromARGB(255, 119, 73, 204),
           child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
