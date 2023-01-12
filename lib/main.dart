@@ -54,6 +54,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    Size screenSize = MediaQuery.of(context).size;
+    Orientation orientation = MediaQuery.of(context).orientation;
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
@@ -62,17 +64,17 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       //backgroundColor: Color.fromARGB(255, 119, 73, 204),
-      appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 119, 73, 204),
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: const Text("Elective 5"),
-      ),
+      //appBar: AppBar(
+      //backgroundColor: Color.fromARGB(255, 119, 73, 204),
+      // Here we take the value from the MyHomePage object that was created by
+      // the App.build method, and use it to set our appbar title.
+      // title: const Text("Elective 5"),
+      //  ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Container(
-          width: 600,
+          width: 500,
           height: 700,
           color: Color.fromARGB(255, 119, 73, 204),
           child: Column(
@@ -87,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         style: ElevatedButton.styleFrom(
                           primary: Color.fromARGB(255, 119, 73, 204),
                           elevation: 3,
-                          padding: EdgeInsets.all(20),
+                          padding: EdgeInsets.all(0),
                         ),
                         child: Icon(
                           Icons.arrow_back,
@@ -101,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         style: ElevatedButton.styleFrom(
                           primary: Color.fromARGB(255, 119, 73, 204),
                           elevation: 3,
-                          padding: EdgeInsets.all(20),
+                          padding: EdgeInsets.all(0),
                         ),
                         child: Icon(
                           Icons.settings,
@@ -238,10 +240,10 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                           ]),
                     ]),
-                Padding(padding: EdgeInsets.all(20)),
+                Padding(padding: EdgeInsets.all(10)),
                 Container(
                   child: SizedBox(
-                    height: 65, //height of button
+                    height: 55, //height of button
                     width: 400,
                     child: ElevatedButton(
                         onPressed: () {},
