@@ -74,47 +74,31 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Container(
           //height: MediaQuery.of(context).size.height,
           //width: MediaQuery.of(context).size.width,
-          height: 600.0, //10% of screen height
-          width: 450.0,
-          color: Color.fromARGB(255, 119, 73, 204),
+          height: 700.0, //10% of screen height
+          width: 400.0,
+
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(
+                Radius.circular(10),
+              ),
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                stops: [
+                  0.1,
+                  0.6,
+                  0.7,
+                ],
+                colors: [
+                  Color.fromARGB(255, 255, 123, 90),
+                  Color.fromARGB(255, 255, 123, 129),
+                  Color.fromARGB(255, 250, 74, 112),
+                ],
+              )),
           child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          primary: Color.fromARGB(255, 119, 73, 204),
-                          elevation: 3,
-                          padding: EdgeInsets.all(0),
-                        ),
-                        child: Icon(
-                          Icons.arrow_back,
-                          size: 50,
-                          color: Color.fromARGB(255, 255, 255, 255),
-                        ),
-                      ),
-                      new Spacer(),
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          primary: Color.fromARGB(255, 119, 73, 204),
-                          elevation: 3,
-                          padding: EdgeInsets.all(0),
-                        ),
-                        child: Icon(
-                          Icons.settings,
-                          size: 50,
-                          color: Color.fromARGB(255, 255, 255, 255),
-                        ),
-                      ),
-                      //new Spacer(),
-                      // Icon(Icons.settings,
-                      //    size: 40, color: Color.fromARGB(255, 255, 255, 255)),
-                    ]),
                 Padding(
                   padding: EdgeInsets.all(10.0),
                 ),
@@ -131,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Padding(padding: EdgeInsets.only(top: 20)),
                 Container(
                   child: Text(
-                    'Althea Maghari',
+                    'FoodPie',
                     style: TextStyle(
                       fontFamily: 'NotoSans',
                       fontWeight: FontWeight.w500,
@@ -139,25 +123,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       color: Color.fromARGB(255, 255, 255, 255),
                     ),
                   ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.location_pin,
-                      color: Color.fromARGB(255, 255, 255, 255),
-                    ),
-                    Padding(padding: EdgeInsets.only(left: 15)),
-                    Text(
-                      'Davao City',
-                      style: TextStyle(
-                        fontFamily: 'NotoSans',
-                        fontWeight: FontWeight.w100,
-                        fontSize: 17,
-                        color: Color.fromARGB(255, 255, 255, 255),
-                      ),
-                    ),
-                  ],
                 ),
                 Container(
                   padding: EdgeInsets.all(15.0),
@@ -244,7 +209,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Container(
                   child: SizedBox(
                     height: 55, //height of button
-                    width: 400,
+                    width: 300,
                     child: ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
