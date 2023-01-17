@@ -106,106 +106,84 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: 160,
                   height: 160,
                   decoration: BoxDecoration(
-                    shape: BoxShape.circle,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(10),
+                    ),
+                    gradient: new LinearGradient(
+                      colors: [
+                        Color.fromARGB(126, 250, 248, 247),
+                        Color.fromARGB(117, 217, 248, 252)
+                      ],
+                    ),
                     image: DecorationImage(
-                        image: AssetImage('assets/image.jpg'),
+                        image: AssetImage(
+                          'assets/image.png',
+                        ),
                         fit: BoxFit.fill),
                   ),
                 ),
                 Padding(padding: EdgeInsets.only(top: 20)),
                 Container(
-                  child: Text(
-                    'FoodPie',
-                    style: TextStyle(
-                      fontFamily: 'NotoSans',
-                      fontWeight: FontWeight.w500,
-                      fontSize: 35,
-                      color: Color.fromARGB(255, 255, 255, 255),
-                    ),
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.all(15.0),
+                  padding: EdgeInsets.all(1.0),
                 ),
                 Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
+                      Padding(padding: EdgeInsets.only(bottom: 1)),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Icon(
-                            Icons.person,
-                            size: 45,
-                            color: Color.fromARGB(255, 255, 255, 255),
-                          ),
-                          Icon(
-                            Icons.people,
-                            size: 45,
-                            color: Color.fromARGB(255, 255, 255, 255),
-                          ),
-                          Icon(
-                            Icons.calendar_month,
-                            size: 45,
-                            color: Color.fromARGB(255, 255, 255, 255),
-                          ),
-                        ],
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text(
+                              'FoodPie',
+                              style: TextStyle(
+                                  fontSize: 55,
+                                  color: Color.fromARGB(255, 255, 255, 255)),
+                            ),
+                          ]),
+                      Text(
+                        'Always Give Better Food Ever',
+                        style: TextStyle(
+                            fontSize: 15,
+                            color: Color.fromARGB(255, 253, 230, 26)),
                       ),
-                      Padding(padding: EdgeInsets.only(bottom: 15)),
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Text(
-                              'FOLLOWERS',
-                              style: TextStyle(
-                                  fontFamily: 'NotoSans',
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 18,
-                                  color: Color.fromARGB(255, 255, 255, 255)),
-                            ),
-                            Text(
-                              'FOLLOWING',
-                              style: TextStyle(
-                                  fontFamily: 'NotoSans',
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 18,
-                                  color: Color.fromARGB(255, 255, 255, 255)),
-                            ),
-                            Text(
-                              'JOINED YEAR',
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontFamily: 'NotoSans',
-                                  fontWeight: FontWeight.w400,
-                                  color: Color.fromARGB(255, 255, 255, 255)),
-                            ),
-                          ]),
-                      Padding(padding: EdgeInsets.only(bottom: 15)),
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Text(
-                              '162',
-                              style: TextStyle(
-                                  fontSize: 25,
-                                  color: Color.fromARGB(255, 255, 255, 255)),
-                            ),
-                            Text(
-                              '19.3M',
-                              style: TextStyle(
-                                  fontSize: 25,
-                                  color: Color.fromARGB(255, 255, 255, 255)),
-                            ),
-                            Text(
-                              '2010',
-                              style: TextStyle(
-                                fontSize: 25,
-                                color: Color.fromARGB(255, 255, 255, 255),
-                              ),
-                            ),
-                          ]),
                     ]),
                 Padding(padding: EdgeInsets.all(10)),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    TextField(
+                        decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.person),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(30),
+                        ),
+                      ),
+                      label: const Center(
+                        child: Text("User Name"),
+                      ),
+                    )),
+                    Padding(padding: EdgeInsets.only(bottom: 20)),
+                    TextField(
+                        style: TextStyle(),
+                        textAlign: TextAlign.left,
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.key_off_rounded),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(30),
+                            ),
+                          ),
+                          label: const Center(
+                            child: Text("Password"),
+                          ),
+                        ))
+                  ],
+                ),
+                Padding(padding: EdgeInsets.only(bottom: 30)),
                 Container(
                   child: SizedBox(
                     height: 55, //height of button
@@ -213,24 +191,35 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                            primary: Color.fromARGB(255, 245, 205, 27),
+                            primary: Color.fromARGB(255, 221, 221, 221),
                             elevation: 3,
-                            padding: EdgeInsets.all(20),
+                            padding: EdgeInsets.all(10),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(50),
                             )),
                         child: const Text(
-                          'Start Following',
+                          'LOGIN',
                           style: TextStyle(
                             fontFamily: 'NotoSans',
                             fontWeight: FontWeight.w500,
-                            fontSize: 23,
-                            color: Color.fromARGB(255, 105, 84, 21),
+                            fontSize: 15,
+                            color: Color.fromARGB(255, 250, 74, 112),
                           ),
                         )),
                   ),
                 ),
+                Padding(padding: EdgeInsets.only(bottom: 30)),
+                Container(
+                  child: Text(
+                    "Don't have an account? Sign Up Now",
+                  ),
+                ),
                 Padding(padding: EdgeInsets.only(bottom: 15)),
+                Container(
+                  child: Text(
+                    "Forgot Password?",
+                  ),
+                ),
               ]),
         ),
       ),
