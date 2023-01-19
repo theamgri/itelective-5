@@ -71,48 +71,50 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
+
         child: Container(
           //height: MediaQuery.of(context).size.height,
           //width: MediaQuery.of(context).size.width,
-          height: 700.0, //10% of screen height
+          height: 800.0, //10% of screen height
           width: 400.0,
 
           decoration: BoxDecoration(
               borderRadius: BorderRadius.all(
-                Radius.circular(10),
+                Radius.circular(50),
               ),
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 stops: [
                   0.1,
-                  0.6,
+                  0.5,
                   0.7,
                 ],
                 colors: [
-                  Color.fromARGB(255, 255, 123, 90),
-                  Color.fromARGB(255, 255, 123, 129),
+                  Color.fromARGB(255, 255, 132, 101),
+                  Color.fromARGB(255, 253, 116, 123),
                   Color.fromARGB(255, 250, 74, 112),
                 ],
               )),
+
           child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(40.0),
                 ),
                 Container(
-                  width: 160,
-                  height: 160,
+                  width: 170,
+                  height: 170,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(
-                      Radius.circular(10),
+                      Radius.circular(55),
                     ),
                     gradient: new LinearGradient(
                       colors: [
-                        Color.fromARGB(126, 250, 248, 247),
-                        Color.fromARGB(117, 217, 248, 252)
+                        Color.fromARGB(59, 250, 248, 247),
+                        Color.fromARGB(59, 217, 248, 252)
                       ],
                     ),
                     image: DecorationImage(
@@ -124,74 +126,131 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Padding(padding: EdgeInsets.only(top: 20)),
                 Container(
-                  padding: EdgeInsets.all(1.0),
+                  padding: EdgeInsets.all(20.0),
                 ),
                 Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Padding(padding: EdgeInsets.only(bottom: 1)),
                       Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Text(
                               'FoodPie',
                               style: TextStyle(
-                                  fontSize: 55,
+                                  height: 0.4,
+                                  fontSize: 50,
+                                  fontFamily: 'Nunito',
+                                  fontWeight: FontWeight.w500,
                                   color: Color.fromARGB(255, 255, 255, 255)),
                             ),
                           ]),
                       Text(
                         'Always Give Better Food Ever',
                         style: TextStyle(
-                            fontSize: 15,
+                            fontFamily: 'Nunito',
+                            fontWeight: FontWeight.w300,
+                            fontSize: 12,
                             color: Color.fromARGB(255, 253, 230, 26)),
                       ),
                     ]),
-                Padding(padding: EdgeInsets.all(10)),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    TextField(
-                        decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.person),
-                      border: OutlineInputBorder(
+                Padding(padding: EdgeInsets.only(top: 60)),
+                Container(
+                    width: 300,
+                    decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(
                           Radius.circular(30),
                         ),
-                      ),
-                      label: const Center(
-                        child: Text("User Name"),
-                      ),
-                    )),
-                    Padding(padding: EdgeInsets.only(bottom: 20)),
-                    TextField(
-                        style: TextStyle(),
-                        textAlign: TextAlign.left,
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.key_off_rounded),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(30),
+                        border: Border.all(
+                            color: Color.fromARGB(255, 255, 255, 255))),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        CircleAvatar(
+                            radius: 25,
+                            backgroundColor: Color.fromARGB(255, 255, 255, 255),
+                            child: Icon(Icons.person,
+                                size: 25.0,
+                                color: Color.fromARGB(255, 255, 71, 71))),
+                        Expanded(
+                            child: Padding(
+                          padding: EdgeInsets.only(right: 25),
+                          child: TextField(
+                            style: TextStyle(
+                                fontFamily: 'Nunito',
+                                fontWeight: FontWeight.w300,
+                                fontSize: 20.0,
+                                height: 0.5,
+                                color: Color.fromARGB(255, 255, 255, 255)),
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: "User Name",
+                              hintStyle: TextStyle(
+                                  fontFamily: 'Nunito',
+                                  fontWeight: FontWeight.w300,
+                                  fontSize: 15,
+                                  color: Color.fromARGB(255, 255, 255, 255)),
                             ),
-                          ),
-                          label: const Center(
-                            child: Text("Password"),
+                            textAlign: TextAlign.center,
+                            scrollPadding: EdgeInsets.all(0.0),
+                            autofocus: true,
                           ),
                         ))
-                  ],
-                ),
-                Padding(padding: EdgeInsets.only(bottom: 30)),
+                      ],
+                    )),
+                Padding(padding: EdgeInsets.only(top: 20)),
+                Container(
+                    width: 300,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(30),
+                        ),
+                        border: Border.all(
+                            color: Color.fromARGB(255, 255, 255, 255))),
+                    child: Row(
+                      children: <Widget>[
+                        CircleAvatar(
+                            radius: 25,
+                            backgroundColor: Color.fromARGB(255, 255, 255, 255),
+                            child: Icon(Icons.key_off_outlined,
+                                size: 25.0,
+                                color: Color.fromARGB(255, 255, 71, 71))),
+                        Expanded(
+                            child: Padding(
+                          padding: EdgeInsets.only(right: 25),
+                          child: TextField(
+                            obscureText: true,
+                            style: TextStyle(
+                                fontFamily: 'Nunito',
+                                fontWeight: FontWeight.w300,
+                                fontSize: 20.0,
+                                height: 0.5,
+                                color: Color.fromARGB(255, 255, 255, 255)),
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: "Password",
+                              hintStyle: TextStyle(
+                                  fontFamily: 'Nunito',
+                                  fontWeight: FontWeight.w300,
+                                  fontSize: 15.0,
+                                  color: Color.fromARGB(255, 255, 255, 255)),
+                            ),
+                            textAlign: TextAlign.center,
+                            scrollPadding: EdgeInsets.all(20.0),
+                            autofocus: true,
+                          ),
+                        ))
+                      ],
+                    )),
+                Padding(padding: EdgeInsets.only(top: 30)),
                 Container(
                   child: SizedBox(
-                    height: 55, //height of button
+                    height: 45, //height of button
                     width: 300,
                     child: ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                            primary: Color.fromARGB(255, 221, 221, 221),
+                            primary: Color.fromARGB(255, 248, 248, 248),
                             elevation: 3,
                             padding: EdgeInsets.all(10),
                             shape: RoundedRectangleBorder(
@@ -200,24 +259,91 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: const Text(
                           'LOGIN',
                           style: TextStyle(
-                            fontFamily: 'NotoSans',
-                            fontWeight: FontWeight.w500,
+                            fontFamily: 'Nunito',
+                            fontWeight: FontWeight.w700,
                             fontSize: 15,
                             color: Color.fromARGB(255, 250, 74, 112),
                           ),
                         )),
                   ),
                 ),
+                Padding(padding: EdgeInsets.only(bottom: 20)),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Padding(padding: EdgeInsets.only(bottom: 20)),
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30.0),
+                          ),
+                          primary: Color.fromARGB(157, 255, 255, 255),
+                          elevation: 3,
+                          padding: EdgeInsets.all(0),
+                        ),
+                        child: Image.asset('assets/facebook.png',
+                            width: 30, height: 50),
+                      ),
+                      Padding(padding: EdgeInsets.only(left: 10)),
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30.0),
+                          ),
+                          primary: Color.fromARGB(157, 255, 255, 255),
+                          elevation: 3,
+                          padding: EdgeInsets.all(0),
+                        ),
+                        child: Image.asset('assets/twitter.png',
+                            width: 30, height: 50),
+                      ),
+                      Padding(padding: EdgeInsets.only(left: 10)),
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30.0),
+                          ),
+                          primary: Color.fromARGB(157, 255, 255, 255),
+                          elevation: 3,
+                          padding: EdgeInsets.all(0),
+                        ),
+                        child: Image.asset('assets/instagram.png',
+                            width: 30, height: 50),
+                      ),
+                    ]),
+                Padding(padding: EdgeInsets.only(top: 20)),
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Text(
+                    "Don't have an account? ",
+                    style: TextStyle(
+                      fontFamily: 'Nunito',
+                      fontWeight: FontWeight.w300,
+                      color: Color.fromARGB(255, 255, 255, 255),
+                    ),
+                  ),
+                  Text(
+                    "Sign Up Now",
+                    style: TextStyle(
+                      fontFamily: 'Nunito',
+                      fontWeight: FontWeight.w500,
+                      color: Color.fromARGB(255, 255, 255, 255),
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                ]),
                 Padding(padding: EdgeInsets.only(bottom: 30)),
                 Container(
                   child: Text(
-                    "Don't have an account? Sign Up Now",
-                  ),
-                ),
-                Padding(padding: EdgeInsets.only(bottom: 15)),
-                Container(
-                  child: Text(
                     "Forgot Password?",
+                    style: TextStyle(
+                      fontFamily: 'Nunito',
+                      fontWeight: FontWeight.w300,
+                      color: Color.fromARGB(255, 255, 255, 255),
+                    ),
                   ),
                 ),
               ]),
