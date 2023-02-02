@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Login Page',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -300,7 +301,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       Padding(padding: EdgeInsets.only(left: 10)),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                              context,
+                              new MaterialPageRoute(
+                                  builder: (context) => new HomePage()));
+                        },
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30.0),
@@ -309,7 +315,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           elevation: 3,
                           padding: EdgeInsets.all(0),
                         ),
-                        child: Image.asset('assets/twitter.png',
+                        child: Image.asset('assets/google.png',
                             width: 30, height: 40),
                       ),
                       Padding(padding: EdgeInsets.only(left: 10)),

@@ -2,6 +2,7 @@ import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/main.dart';
+import 'package:flutter_application_1/homepage.dart';
 
 //void main() {
 // runApp(const SignUpPage());
@@ -48,6 +49,9 @@ class SignUpPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.all(1),
+                ),
                 Container(
                   width: 120,
                   height: 120,
@@ -70,7 +74,7 @@ class SignUpPage extends StatelessWidget {
                 ),
                 Padding(padding: EdgeInsets.only(top: 20)),
                 Container(
-                  padding: EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(2.0),
                 ),
                 Column(
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -98,7 +102,7 @@ class SignUpPage extends StatelessWidget {
                             color: Color.fromARGB(255, 253, 230, 26)),
                       ),
                     ]),
-                Padding(padding: EdgeInsets.only(top: 20)),
+                Padding(padding: EdgeInsets.only(top: 8)),
                 Container(
                     width: 300,
                     height: 35,
@@ -372,22 +376,22 @@ class SignUpPage extends StatelessWidget {
                         ))
                       ],
                     )),
-                Padding(padding: EdgeInsets.only(top: 30)),
+                Padding(padding: EdgeInsets.only(top: 15)),
                 Container(
                   child: SizedBox(
-                    height: 40, //height of button
+                    height: 30, //height of button
                     width: 300,
                     child: ElevatedButton(
                         onPressed: () {
-                          // Navigator.pushReplacement(
-                          //   context,
-                          //   new MaterialPageRoute(
-                          //     builder: (context) => new HomePage()));
+                          Navigator.pushReplacement(
+                              context,
+                              new MaterialPageRoute(
+                                  builder: (context) => new HomePage()));
                         },
                         style: ElevatedButton.styleFrom(
                             primary: Color.fromARGB(255, 248, 248, 248),
                             elevation: 3,
-                            padding: EdgeInsets.all(5),
+                            padding: EdgeInsets.all(3),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(50),
                             )),
@@ -402,55 +406,7 @@ class SignUpPage extends StatelessWidget {
                         )),
                   ),
                 ),
-                Padding(padding: EdgeInsets.only(bottom: 20)),
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Padding(padding: EdgeInsets.only(bottom: 20)),
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50.0),
-                          ),
-                          primary: Color.fromARGB(157, 255, 255, 255),
-                          elevation: 3,
-                          padding: EdgeInsets.all(0),
-                        ),
-                        child: Image.asset('assets/facebook.png',
-                            width: 30, height: 40),
-                      ),
-                      Padding(padding: EdgeInsets.only(left: 10)),
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30.0),
-                          ),
-                          primary: Color.fromARGB(157, 255, 255, 255),
-                          elevation: 3,
-                          padding: EdgeInsets.all(0),
-                        ),
-                        child: Image.asset('assets/twitter.png',
-                            width: 30, height: 40),
-                      ),
-                      Padding(padding: EdgeInsets.only(left: 10)),
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30.0),
-                          ),
-                          primary: Color.fromARGB(157, 255, 255, 255),
-                          elevation: 3,
-                          padding: EdgeInsets.all(0),
-                        ),
-                        child: Image.asset('assets/instagram.png',
-                            width: 30, height: 40),
-                      ),
-                    ]),
-                Padding(padding: EdgeInsets.only(top: 20)),
+                Padding(padding: EdgeInsets.only(bottom: 2)),
                 Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                   Text(
                     "Already have an account? ",
@@ -487,6 +443,7 @@ class SignUpPage extends StatelessWidget {
                     "Contact for Support",
                     style: TextStyle(
                       fontFamily: 'Nunito',
+                      fontSize: 10,
                       fontWeight: FontWeight.w300,
                       color: Color.fromARGB(255, 255, 255, 255),
                     ),

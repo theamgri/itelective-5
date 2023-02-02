@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_application_1/main.dart';
 import 'package:flutter_application_1/signup.dart';
-
+import 'package:flutter_application_1/navbar.dart';
 import 'package:flutter_application_1/homepage.dart';
 
 void main() {
