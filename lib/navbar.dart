@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sidebarx/sidebarx.dart';
+import 'package:flutter_application_1/homepage.dart';
 import 'package:flutter_application_1/rightnavbar.dart';
 
 void main() {
@@ -70,9 +71,10 @@ class LeftDrawer extends StatelessWidget {
                     ),
                   ),
                 ),
-                right(
-                  controller: _controller,
-                ),
+                if (!isSmallScreen)
+                  right(
+                    controller: _controller,
+                  ),
                 // Expanded(
                 //   child: Container(
                 //     child: right(
@@ -255,14 +257,14 @@ class right extends StatelessWidget {
         ),
       ),
       extendedTheme: const SidebarXTheme(
-        width: 200,
+        width: 250,
         decoration: BoxDecoration(
           color: Color.fromARGB(255, 78, 78, 78),
         ),
       ),
       //footerDivider: divider,
       headerBuilder: (context, extended) {
-        return Card();
+        return ForData();
       },
       items: [
         const SidebarXItem(
@@ -290,6 +292,33 @@ class _ScreensExample extends StatelessWidget {
       animation: controller,
       builder: (context, child) {
         switch (controller.selectedIndex) {
+          case 0:
+            return Scaffold(
+                body: Center(
+                    child: Container(
+              //width: 120,
+              //height: 120,
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(0),
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  stops: [
+                    0.1,
+                    0.5,
+                    0.7,
+                  ],
+                  colors: [
+                    Color.fromARGB(255, 255, 132, 101),
+                    Color.fromARGB(255, 253, 116, 123),
+                    Color.fromARGB(255, 250, 74, 112),
+                  ],
+                ),
+              ),
+              child: MealData(),
+            )));
           case 4:
             return Scaffold(
               body: Center(
@@ -314,9 +343,8 @@ class _ScreensExample extends StatelessWidget {
                       Color.fromARGB(255, 250, 74, 112),
                     ],
                   ),
-
-                  //fit: BoxFit.fill,
                 ),
+
                 child: Container(
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -342,59 +370,139 @@ class _ScreensExample extends StatelessWidget {
                               fit: BoxFit.fill),
                         ),
                       ),
-                      Text(
-                        'Test',
-                        style: TextStyle(
-                            fontFamily: 'Nunito',
-                            fontWeight: FontWeight.w300,
-                            fontSize: 45,
-                            color: Color.fromARGB(255, 253, 230, 26)),
-                      ),
-                      Text(
-                        'Test',
-                        style: TextStyle(
-                            fontFamily: 'Nunito',
-                            fontWeight: FontWeight.w300,
-                            fontSize: 45,
-                            color: Color.fromARGB(255, 253, 230, 26)),
-                      ),
-                      Text(
-                        'Test',
-                        style: TextStyle(
-                            fontFamily: 'Nunito',
-                            fontWeight: FontWeight.w300,
-                            fontSize: 45,
-                            color: Color.fromARGB(255, 253, 230, 26)),
+                      Column(
+                        children: [
+                          Padding(padding: EdgeInsets.only(top: 10)),
+                          Container(
+                              width: 500,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(2),
+                                ),
+                                gradient: new LinearGradient(
+                                  colors: [
+                                    Color.fromARGB(59, 250, 248, 247),
+                                    Color.fromARGB(59, 217, 248, 252)
+                                  ],
+                                ),
+                              ),
+                              // height: MediaQuery.of(context).size.height,
+                              //height: MediaQuery.of(context).orientation.portrait,
+                              //width: MediaQuery.of(context).size.width,
+                              alignment: Alignment.center,
+                              //width: 400,
+                              child: Text(
+                                '1. The Setup Experience was quite hassle for me due to the large packages to such as flutter SDK was a quite hassle to download. However, it is still pretty exciting when you are finally able to start coding.',
+                                style: TextStyle(
+                                    fontFamily: 'Nunito',
+                                    fontWeight: FontWeight.w300,
+                                    fontSize: 15,
+                                    color: Color.fromARGB(255, 253, 230, 26)),
+                              )),
+                          Padding(padding: EdgeInsets.only(top: 10)),
+                          Container(
+                            width: 500,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(2),
+                              ),
+                              gradient: new LinearGradient(
+                                colors: [
+                                  Color.fromARGB(59, 250, 248, 247),
+                                  Color.fromARGB(59, 217, 248, 252)
+                                ],
+                              ),
+                            ),
+                            alignment: Alignment.center,
+                            child: Text(
+                              '2. The building and running experience gave me a small hard time due to having a middle range computer. However, I have been using the flutter run to make it easier and lighter to run in coding',
+                              style: TextStyle(
+                                  fontFamily: 'Nunito',
+                                  fontWeight: FontWeight.w300,
+                                  fontSize: 15,
+                                  color: Color.fromARGB(255, 253, 230, 26)),
+                            ),
+                          ),
+                          Padding(padding: EdgeInsets.only(top: 10)),
+                          Container(
+                            width: 500,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(2),
+                              ),
+                              gradient: new LinearGradient(
+                                colors: [
+                                  Color.fromARGB(59, 250, 248, 247),
+                                  Color.fromARGB(59, 217, 248, 252)
+                                ],
+                              ),
+                            ),
+                            alignment: Alignment.center,
+                            child: Text(
+                              '3. The highs in my progress is the when I get to see a progress that worked in my code. When each components are finally getting to connect and have a function. Lows in the code was debugging since I am new to flutter. When I was trying to debug, layout or style of coding in flutter is difficult to read sometimes.',
+                              style: TextStyle(
+                                  fontFamily: 'Nunito',
+                                  fontWeight: FontWeight.w300,
+                                  fontSize: 15,
+                                  color: Color.fromARGB(255, 253, 230, 26)),
+                            ),
+                          ),
+                          Padding(padding: EdgeInsets.only(top: 10)),
+                          Container(
+                            width: 500,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(2),
+                              ),
+                              gradient: new LinearGradient(
+                                colors: [
+                                  Color.fromARGB(59, 250, 248, 247),
+                                  Color.fromARGB(59, 217, 248, 252)
+                                ],
+                              ),
+                            ),
+                            alignment: Alignment.center,
+                            child: Text(
+                              '4. The first bug I got my legit frustration while coding was when the code finally worked when I was testing it. Although when I am ready for recording, there has been error and it has been difficult to debug flutter due to I am new to it.',
+                              style: TextStyle(
+                                  fontFamily: 'Nunito',
+                                  fontWeight: FontWeight.w300,
+                                  fontSize: 15,
+                                  color: Color.fromARGB(255, 253, 230, 26)),
+                            ),
+                          ),
+                          Padding(padding: EdgeInsets.only(top: 10)),
+                          Container(
+                            width: 500,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(5),
+                              ),
+                              gradient: new LinearGradient(
+                                colors: [
+                                  Color.fromARGB(59, 250, 248, 247),
+                                  Color.fromARGB(59, 217, 248, 252)
+                                ],
+                              ),
+                            ),
+                            child: Text(
+                              '5. The first eureka moment is when finally learned how to use the components and widgets. One example also is when I finally got to use a package in flutter for the first time. Every beginner would also remember this moment as a sign that I can do this and become expert on it.',
+                              style: TextStyle(
+                                  fontFamily: 'Nunito',
+                                  fontWeight: FontWeight.w300,
+                                  fontSize: 15,
+                                  color: Color.fromARGB(255, 253, 230, 26)),
+                            ),
+                          ),
+                        ],
                       ),
                     ])),
               )),
             );
           default:
             return Scaffold(
-              body: Center(
-                  child: Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(0),
-                          gradient: LinearGradient(
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                            stops: [
-                              0.1,
-                              0.5,
-                              0.7,
-                            ],
-                            colors: [
-                              Color.fromARGB(255, 255, 132, 101),
-                              Color.fromARGB(255, 253, 116, 123),
-                              Color.fromARGB(255, 250, 74, 112),
-                            ],
-                          ),
-                          image: DecorationImage(
-                            image: AssetImage(
-                              'assets/image.png',
-                            ),
-                            //fit: BoxFit.fill,
-                          )))),
+              body: Container(),
+              //ForData(),
             );
         }
       },
