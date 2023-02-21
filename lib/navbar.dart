@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/main.dart';
 import 'package:sidebarx/sidebarx.dart';
 import 'package:flutter_application_1/homepage.dart';
 import 'package:flutter_application_1/rightnavbar.dart';
@@ -202,6 +203,7 @@ class left extends StatelessWidget {
   }
 }
 
+//RIGHT NAVBAR
 class right extends StatelessWidget {
   const right({
     Key? key,
@@ -267,9 +269,13 @@ class right extends StatelessWidget {
         return ForData();
       },
       items: [
-        const SidebarXItem(
+        SidebarXItem(
           icon: Icons.logout,
           label: 'Logout',
+          onTap: () {
+            Navigator.pushReplacement(context,
+                new MaterialPageRoute(builder: (context) => new MyApp()));
+          },
         ),
       ],
     );

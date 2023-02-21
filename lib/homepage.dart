@@ -169,10 +169,7 @@ class _ForMealData extends State<MealData> {
           return ResponsiveGridList(
             horizontalGridMargin: 50,
             verticalGridMargin: 50,
-            //desiredItemWidth: 200,
-            //minSpacing: 10,
-
-            minItemWidth: 200,
+            minItemWidth: 250,
             children: snapshot.data!.map((data) {
               return GridTile(
                 child: Container(
@@ -189,17 +186,21 @@ class _ForMealData extends State<MealData> {
                   ),
                   child: Column(
                     children: [
-                      Padding(padding: const EdgeInsets.all(10)),
-                      Image.network(
+                      Container(
+                          // decoration: BoxDecoration(
+                          //     image: DecorationImage(
+                          //         image: NetworkImage(data.MealThumb),
+                          //         fit: BoxFit.fill))),
+                          child: Image.network(
                         data.MealThumb,
-                        height: 250,
-                      ),
+                        //height: 250,
+                      )),
                       Padding(
                           padding: const EdgeInsets.only(top: 10, left: 30)),
                       Text(
                         data.Meal,
                         style: TextStyle(
-                            height: 0.4,
+                            height: 1,
                             fontSize: 18,
                             fontFamily: 'Nunito',
                             fontWeight: FontWeight.w500,
